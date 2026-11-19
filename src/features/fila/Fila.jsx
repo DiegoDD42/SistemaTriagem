@@ -114,8 +114,8 @@ export default function Fila({ fila, perfil, setPerfil }) {
             </p>
           </Alert>
         ) : (
-          <ListGroup as="ol" numbered className="fila-lista">
-            {lista.map((p) => {
+          <ListGroup className="fila-lista">
+            {lista.map((p, index) => {
               const c = p.classificacao;
 
               return (
@@ -127,6 +127,10 @@ export default function Fila({ fila, perfil, setPerfil }) {
                     '--cor-classificacao': c.cor
                   }}
                 >
+                  <div className="fw-semibold mb-2">
+                    {index + 1}.
+                  </div>
+                  
                   <div className="d-flex justify-content-between align-items-start flex-wrap gap-2">
                     <div>
                       <h6 className="fw-bold mb-1">
